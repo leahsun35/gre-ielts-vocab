@@ -1,34 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f3ed">
-  <title>词汇岛 · GRE &amp; IELTS</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="app-shell">
-    <header class="topbar"><a class="brand" href="#"><span class="brand-mark">v.</span><span>词汇岛</span></a><span class="top-note">每天一点，积累看得见</span></header>
-    <section class="intro">
-      <div class="intro-copy"><p class="eyebrow">YOUR DAILY WORD PRACTICE</p><h1>把单词，变成<br><em>自己的表达。</em></h1><p class="subtitle">从 GRE、IELTS 示例词和开放许可的通用及学术词表中学习。</p></div>
-      <div class="progress-card"><div class="progress-top"><span>今日学习</span><span id="progress-label">0 / 100</span></div><div class="progress-track"><span id="progress-fill"></span></div><p id="progress-note">开始今天的第一张卡片吧</p></div>
-    </section>
-    <section class="study-area" aria-label="单词学习">
-      <div class="toolbar"><div class="filters" role="group" aria-label="选择词库"><button class="filter active" data-exam="all">全部</button><button class="filter" data-exam="GRE">GRE</button><button class="filter" data-exam="IELTS">IELTS</button><button class="filter" data-exam="NGSL 1.01">NGSL</button><button class="filter" data-exam="NAWL 1.0">NAWL</button><button class="filter" data-exam="AKL">AKL</button></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索单词或释义" aria-label="搜索单词或释义"></label></div>
-      <article class="word-card" id="word-card">
-        <div class="card-meta"><span id="word-category" class="tag">GRE</span><span id="word-count">01 / 20</span></div>
-        <div class="word-main"><h2 id="word">abate</h2><button id="sound" class="sound" aria-label="播放发音" title="播放发音">⌁</button></div>
-        <p id="pronunciation" class="pronunciation">/əˈbeɪt/ <span>verb</span></p>
-        <div class="meaning-block"><p class="label">释义 / Meaning</p><p id="meaning" class="meaning">减弱；缓和</p></div>
-        <div class="example-block"><p class="label">例句</p><p id="example" class="example">The storm began to abate before dawn.</p></div>
-        <p id="empty-state" class="empty-state" hidden>没有找到匹配的单词，试试其他搜索词吧。</p>
-        <div class="card-actions"><button id="skip" class="button button-light">跳过</button><button id="know" class="button button-primary">我记住了 <span>→</span></button></div>
-      </article>
-      <p class="keyboard-hint">按 <kbd>空格</kbd> 翻看释义　·　学习进度保存在当前浏览器</p>
-    </section>
-    <footer><span>小步学习，持续进步。</span><span id="mastered-total">已掌握 0 个词</span></footer>
-  </main>
-  <script src="app.js?v=20261029-4" defer></script>
-</body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#edf1ed"><title>英语学习 Lab · Vocabulary &amp; Speaking</title><link rel="stylesheet" href="styles.css?v=20261029-5"></head>
+<body><main class="app-shell">
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">EL</span><span><strong>英语学习 Lab</strong><small>VOCABULARY · SPEAKING · PRACTICE</small></span></a><nav class="main-nav" aria-label="学习模块"><button class="nav-button active" data-view="vocabulary">单词学习</button><button class="nav-button" data-view="speaking">IELTS 口语</button></nav><span class="top-note">持续积累，随时复盘</span></header>
+<section class="lab-intro"><div><p class="eyebrow">YOUR ENGLISH LEARNING LAB</p><h1>让每次练习，<em>留下成果。</em></h1><p class="subtitle">词汇、口语语料与个人表达，放进同一个学习空间。</p></div><div class="intro-orbit" aria-hidden="true"><span>LEARN</span><i>·</i><span>EXPLORE</span><i>·</i><span>REFLECT</span></div></section>
+<section id="workspace-vocabulary" class="workspace">
+<div class="section-heading"><div><p class="eyebrow">VOCABULARY</p><h2>单词学习</h2><p>每天学习 100 个词，学习记录保存在当前浏览器。</p></div><div class="daily-card"><div><span>今日进度</span><strong id="progress-label">0 / 100</strong></div><div class="progress-track"><span id="progress-fill"></span></div><small id="progress-note">开始今天的练习</small></div></div>
+<div class="vocab-toolbar"><div class="filters" role="group" aria-label="选择词库"><button class="filter active" data-exam="all">全部</button><button class="filter" data-exam="GRE">GRE</button><button class="filter" data-exam="IELTS">IELTS</button><button class="filter" data-exam="NAWL 1.0">NAWL 学术词</button></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索单词、释义或主题" aria-label="搜索单词、释义或主题"></label></div>
+<div class="vocab-layout"><article class="word-card" id="word-card"><div class="card-meta"><span id="word-category" class="tag">词库载入中</span><span id="word-count">—</span></div><div class="word-main"><h3 id="word">正在准备词库…</h3><button id="sound" class="sound" aria-label="播放发音" title="播放发音">⌁</button></div><p id="pronunciation" class="pronunciation"></p><div class="meaning-block"><p class="label">释义 / Meaning</p><p id="meaning" class="meaning"></p></div><div class="example-block"><p class="label">例句</p><p id="example" class="example"></p></div><p id="empty-state" class="empty-state" hidden></p><div class="card-actions"><button id="skip" class="button button-light">跳过</button><button id="know" class="button button-primary">记住了 <span>→</span></button></div></article>
+<aside class="lab-sidecard"><span class="side-icon">✳</span><p class="eyebrow">MY PRACTICE</p><strong id="mastered-total">已掌握 0 个词</strong><p>词汇是输入，口语是输出。切换到 IELTS 口语 Lab，把新表达用进自己的答案。</p><button class="text-button" data-open-speaking>进入口语练习 <span>↗</span></button></aside></div><p class="keyboard-hint">按 <kbd>空格</kbd> 翻看下一张卡片</p></section>
+<section id="workspace-speaking" class="workspace" hidden>
+<div class="section-heading speaking-heading"><div><p class="eyebrow">IELTS SPEAKING LAB</p><h2>从题目到自己的表达</h2><p>收集题目、整理思路、积累自然表达，再保存自己的答案。</p></div><div class="speaking-stats"><div><strong id="question-total">0</strong><span>题目</span></div><div><strong id="answer-total">0</strong><span>答案</span></div><div><strong id="phrase-total">10</strong><span>表达素材</span></div></div></div>
+<div class="speaking-layout"><aside class="module-rail" role="tablist" aria-label="口语练习模块">
+<button class="module-tab active" role="tab" aria-selected="true" data-speaking-tab="questions"><span>01</span><b>真题收集</b><small>建立自己的题库</small></button><button class="module-tab" role="tab" aria-selected="false" data-speaking-tab="planning"><span>02</span><b>答题思路</b><small>组织观点与例子</small></button><button class="module-tab" role="tab" aria-selected="false" data-speaking-tab="phrases"><span>03</span><b>自然表达素材</b><small>积累可迁移表达</small></button><button class="module-tab" role="tab" aria-selected="false" data-speaking-tab="answers"><span>04</span><b>个人答案</b><small>记录并反复打磨</small></button></aside>
+<div class="speaking-content">
+<section class="speaking-panel active" role="tabpanel" data-speaking-panel="questions"><div class="panel-title"><div><p class="eyebrow">QUESTION BANK</p><h3>真题收集</h3><p>录入题目时记下来源，方便日后核对与复习。</p></div><span class="panel-mark">01 / 04</span></div>
+<form id="question-form" class="entry-form"><div class="form-row"><label>Part<select id="question-part"><option>Part 1</option><option>Part 2</option><option>Part 3</option></select></label><label>话题<input id="question-topic" type="text" placeholder="例如：Study、Hometown"></label></div><label>题目<textarea id="question-prompt" rows="2" required placeholder="粘贴你确认过的口语题目"></textarea></label><div class="form-row"><label class="grow">来源 / 考试时间<input id="question-source" type="text" placeholder="例如：官方公开题目、月份/地区、网页链接"></label><button class="button button-primary form-submit" type="submit">加入题库 <span>＋</span></button></div><p class="form-note">题库由你收集和核实；未经核实的练习题不会被标成真题。</p></form><div class="list-heading"><h4>我的题库</h4><span id="question-list-count">0 条</span></div><div id="question-list" class="question-list"></div></section>
+<section class="speaking-panel" role="tabpanel" data-speaking-panel="planning" hidden><div class="panel-title"><div><p class="eyebrow">BUILD AN ANSWER</p><h3>答题思路</h3><p id="planning-selected">先从题库选择一道题，或使用下面的通用框架。</p></div><span class="panel-mark">02 / 04</span></div><div id="planning-prompt" class="selected-prompt">尚未选择题目</div><div class="framework-grid"><article class="framework-card" data-part-guide="Part 1"><span>PART 1</span><h4>简洁展开</h4><p>直接回答 → 给出原因 → 补充具体细节或小例子。</p></article><article class="framework-card" data-part-guide="Part 2"><span>PART 2</span><h4>时间线索</h4><p>背景 → 关键经过 → 感受或意义。用时间、地点、人物把故事串起来。</p></article><article class="framework-card" data-part-guide="Part 3"><span>PART 3</span><h4>观点论证</h4><p>观点 → 原因 → 例子 → 补充比较、影响或条件。</p></article></div><label class="field-label" for="plan-notes">我的答题提纲</label><textarea id="plan-notes" class="large-textarea" rows="5" placeholder="写下关键词、观点、理由和例子；先列要点，不必写成完整答案。"></textarea><div class="form-actions"><span id="plan-status" class="form-note">提纲仅保存在当前浏览器</span><button id="save-plan" class="button button-primary" type="button">保存思路</button></div></section>
+<section class="speaking-panel" role="tabpanel" data-speaking-panel="phrases" hidden><div class="panel-title"><div><p class="eyebrow">SOUND NATURAL</p><h3>自然表达素材</h3><p>积累能灵活迁移的表达，记下适用场景，不背整段模板。</p></div><span class="panel-mark">03 / 04</span></div><form id="phrase-form" class="entry-form phrase-form"><div class="form-row"><label class="grow">表达<input id="phrase-text" type="text" required placeholder="例如：One thing that stands out to me is…"></label><label>用途<input id="phrase-category" type="text" placeholder="表达观点"></label></div><div class="form-row"><label class="grow">使用提示<input id="phrase-note" type="text" placeholder="适合描述印象深刻的人、地方或经历"></label><button class="button button-primary form-submit" type="submit">保存素材 <span>＋</span></button></div></form><label class="search phrase-search"><span>⌕</span><input id="phrase-search" type="search" placeholder="搜索表达或用途" aria-label="搜索表达素材"></label><div id="phrase-list" class="phrase-list"></div></section>
+<section class="speaking-panel" role="tabpanel" data-speaking-panel="answers" hidden><div class="panel-title"><div><p class="eyebrow">MY ANSWERS</p><h3>个人答案积累</h3><p>把自己的版本留下来，之后可以再练、再改。</p></div><span class="panel-mark">04 / 04</span></div><div id="answer-prompt" class="selected-prompt">先从真题收集里选择一道题。</div><label class="field-label" for="answer-draft">我的口语答案</label><textarea id="answer-draft" class="large-textarea answer-textarea" rows="7" placeholder="用自己的话回答。可以先录入文字稿，再逐步练习脱稿表达。"></textarea><div class="form-actions"><span class="form-note">答案只保存在当前浏览器</span><button id="save-answer" class="button button-primary" type="button">保存答案</button></div><div class="list-heading"><h4>练习记录</h4><span id="answer-list-count">0 条</span></div><div id="answer-list" class="answer-list"></div></section>
+</div></div><p class="privacy-note">你的题目、提纲、表达素材和答案保存在当前浏览器，不会上传到服务器。</p></section>
+<footer class="site-footer"><span>ENGLISH LEARNING LAB <i>·</i> 持续学习，持续迭代</span><span>本地保存学习记录</span></footer>
+</main><script src="app.js?v=20261029-5" defer></script></body></html>
