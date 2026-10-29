@@ -1,5 +1,5 @@
 const elements = Object.fromEntries(['word-card','word-category','word-count','word','pronunciation','meaning','example','empty-state','progress-label','progress-fill','progress-note','mastered-total','search','sound','skip','know'].map(id => [id, document.getElementById(id)]));
-const dailyTarget = 10;
+const dailyTarget = 100;
 let words = [];
 let exam = 'all';
 let currentIndex = 0;
