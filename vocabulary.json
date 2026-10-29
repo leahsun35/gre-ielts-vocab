@@ -1,0 +1,22 @@
+[
+  {"word":"abate","exam":"GRE","pos":"verb","pronunciation":"/əˈbeɪt/","meaning":"减弱；缓和","example":"The storm began to abate before dawn."},
+  {"word":"ambiguous","exam":"GRE","pos":"adjective","pronunciation":"/æmˈbɪɡjuəs/","meaning":"模棱两可的；含糊不清的","example":"The instructions were ambiguous, so we asked for clarification."},
+  {"word":"candid","exam":"GRE","pos":"adjective","pronunciation":"/ˈkændɪd/","meaning":"坦率的；直言不讳的","example":"She gave a candid account of what had happened."},
+  {"word":"diligent","exam":"GRE","pos":"adjective","pronunciation":"/ˈdɪlɪdʒənt/","meaning":"勤勉的；用功的","example":"His diligent research uncovered several useful sources."},
+  {"word":"elicit","exam":"GRE","pos":"verb","pronunciation":"/ɪˈlɪsɪt/","meaning":"引出；诱出（反应或回答）","example":"The question was designed to elicit an honest response."},
+  {"word":"frugal","exam":"GRE","pos":"adjective","pronunciation":"/ˈfruːɡəl/","meaning":"节俭的；朴素的","example":"They lived a frugal life while saving for a home."},
+  {"word":"impartial","exam":"GRE","pos":"adjective","pronunciation":"/ɪmˈpɑːrʃəl/","meaning":"公正的；不偏不倚的","example":"An impartial review can help both sides reach an agreement."},
+  {"word":"mitigate","exam":"GRE","pos":"verb","pronunciation":"/ˈmɪtɪɡeɪt/","meaning":"减轻；缓和（不良影响）","example":"Planting trees can help mitigate the effects of heat."},
+  {"word":"plausible","exam":"GRE","pos":"adjective","pronunciation":"/ˈplɔːzəbəl/","meaning":"看似合理的；可信的","example":"Her explanation sounded plausible, but we checked the facts."},
+  {"word":"resilient","exam":"GRE","pos":"adjective","pronunciation":"/rɪˈzɪliənt/","meaning":"有韧性的；能迅速恢复的","example":"The resilient community rebuilt after the flood."},
+  {"word":"allocate","exam":"IELTS","pos":"verb","pronunciation":"/ˈæləkeɪt/","meaning":"分配；拨出（资源或时间）","example":"The council will allocate more funds to public transport."},
+  {"word":"consequence","exam":"IELTS","pos":"noun","pronunciation":"/ˈkɑːnsɪkwens/","meaning":"结果；后果","example":"One consequence of the change was a shorter commute."},
+  {"word":"decline","exam":"IELTS","pos":"noun / verb","pronunciation":"/dɪˈklaɪn/","meaning":"下降；减少；婉拒","example":"The report shows a steady decline in energy use."},
+  {"word":"efficient","exam":"IELTS","pos":"adjective","pronunciation":"/ɪˈfɪʃənt/","meaning":"效率高的；高效的","example":"An efficient heating system uses less energy."},
+  {"word":"fluctuate","exam":"IELTS","pos":"verb","pronunciation":"/ˈflʌktʃueɪt/","meaning":"波动；起伏","example":"Prices tend to fluctuate during the holiday season."},
+  {"word":"generate","exam":"IELTS","pos":"verb","pronunciation":"/ˈdʒenəreɪt/","meaning":"产生；生成","example":"The new project is expected to generate local jobs."},
+  {"word":"inevitable","exam":"IELTS","pos":"adjective","pronunciation":"/ɪnˈevɪtəbəl/","meaning":"不可避免的；必然发生的","example":"Some changes are inevitable as a city grows."},
+  {"word":"maintain","exam":"IELTS","pos":"verb","pronunciation":"/meɪnˈteɪn/","meaning":"维持；保养；坚持认为","example":"Regular exercise helps maintain good health."},
+  {"word":"significant","exam":"IELTS","pos":"adjective","pronunciation":"/sɪɡˈnɪfɪkənt/","meaning":"显著的；重要的","example":"There has been a significant improvement in air quality."},
+  {"word":"valid","exam":"IELTS","pos":"adjective","pronunciation":"/ˈvælɪd/","meaning":"有效的；有根据的","example":"The study raises a valid concern about access to education."}
+]
