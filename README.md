@@ -32,3 +32,11 @@ python -m http.server 8000
 `https://leahsun35.github.io/gre-ielts-vocab/`
 
 每次推送到 main 后，GitHub Pages 会自动更新。
+
+## 雅思扩展词库
+
+已加入 Word Atlas 公开数据集中的 7,298 条词目。与原有词库去重后，应用共提供约 8,003 个独立词条；雅思筛选可浏览该数据集。保留词条的中文释义、音标、CEFR 等级和主题。
+
+**署名：** Word Atlas contributors — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，来源：[designfuchen/word-atlas](https://github.com/designfuchen/word-atlas)。我们将词条转换为本应用的数据结构并与现有词库去重。该项目说明词条由 AI 生成、自动检查、未经逐条人工审校，且不是官方 IELTS 词表。
+
+OpenEtymology 仓库的 GRE8000 / TOEFL 公共词书文本按 CC BY-SA 4.0 开放，但 TXT 文件只含词目；仓库明确说明完整词典数据库未包含、也不在该许可范围内。我们暂不把这些无释义词目放入学习卡片，以免出现大量没有释义的卡片。来源：[OpenEtymology](https://github.com/openetymology/OpenEtymology)，[数据许可说明](https://github.com/openetymology/OpenEtymology/blob/main/DATA_LICENSE.md)。

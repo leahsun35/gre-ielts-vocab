@@ -13,10 +13,39 @@ if (localStorage.getItem('vocab-studied-date') !== today) {
 }
 
 function sourcesOf(item) { return item.sources || (item.source ? [item.source] : []); }
+function normalizeWordAtlas(data) {
+  const posMap = { 'n.': 'noun', 'v.': 'verb', 'adj.': 'adjective', 'adv.': 'adverb', 'pron.': 'pronoun', 'prep.': 'preposition', 'conj.': 'conjunction', 'det.': 'determiner', 'aux.': 'auxiliary', 'phr.': 'phrase', 'num.': 'numeral', 'int.': 'interjection' };
+  return (data.words || []).map(row => {
+    const gloss = String(row[2] || '');
+    const match = gloss.match(/^([a-z]+\.)\s*/i);
+    return { word: row[1], exam: 'IELTS', exams: ['IELTS'], pos: match ? (posMap[match[1].toLowerCase()] || match[1]) : '', pronunciation: row[3] || '', meaning: match ? gloss.slice(match[0].length) : gloss, example: '', source: 'Word Atlas', sources: ['Word Atlas'], cefr: data.cefr?.[row[4]] || '', topic: data.topics?.[row[5]]?.[1] || '' };
+  });
+}
+function mergeWordLists(base, extra) {
+  const merged = new Map();
+  for (const item of [...base, ...extra]) {
+    const key = String(item.word || '').trim().toLowerCase();
+    if (!key) continue;
+    const current = merged.get(key);
+    if (!current) {
+      merged.set(key, { ...item, sources: [...new Set(sourcesOf(item))], exams: [...new Set(item.exams || [])] });
+      continue;
+    }
+    current.sources = [...new Set([...sourcesOf(current), ...sourcesOf(item)])];
+    current.exams = [...new Set([...(current.exams || []), ...(item.exams || [])])];
+    if (!current.meaning && item.meaning) current.meaning = item.meaning;
+    if (!current.pos && item.pos) current.pos = item.pos;
+    if (!current.pronunciation && item.pronunciation) current.pronunciation = item.pronunciation;
+    if (!current.example && item.example) current.example = item.example;
+    if (!current.cefr && item.cefr) current.cefr = item.cefr;
+    if (!current.topic && item.topic) current.topic = item.topic;
+  }
+  return [...merged.values()];
+}
 function visibleWords() {
   const query = elements.search.value.trim().toLowerCase();
   return words.filter(item => {
-    const inSet = exam === 'all' || item.exam === exam || sourcesOf(item).includes(exam);
+    const inSet = exam === 'all' || item.exam === exam || (item.exams || []).includes(exam) || sourcesOf(item).includes(exam);
     return inSet && (!query || `${item.word} ${item.meaning} ${item.example} ${sourcesOf(item).join(' ')}`.toLowerCase().includes(query));
   });
 }
@@ -85,11 +114,20 @@ document.addEventListener('keydown', event => {
     advance(false);
   }
 });
-fetch('./vocabulary.json?v=20261029-2').then(response => {
-  if (!response.ok) throw new Error('词库读取失败');
-  return response.json();
-}).then(data => { words = data; render(); }).catch(() => {
+Promise.all([
+  fetch('./vocabulary.json?v=20261029-3').then(response => {
+    if (!response.ok) throw new Error('词库读取失败');
+    return response.json();
+  }),
+  fetch('./word-atlas.json?v=20261029-1').then(response => {
+    if (!response.ok) throw new Error('IELTS 词库读取失败');
+    return response.json();
+  })
+]).then(([data, atlas]) => {
+  words = mergeWordLists(data, normalizeWordAtlas(atlas));
+  render();
+}).catch(() => {
   elements['word-card'].classList.add('empty');
   elements['empty-state'].hidden = false;
-  elements['empty-state'].textContent = '暂时无法读取词库，请通过网页地址打开此页面。';
+  elements['empty-state'].textContent = '暂时无法读取词库，请刷新网页后重试。';
 });
