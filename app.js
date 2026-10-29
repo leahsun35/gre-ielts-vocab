@@ -1,4 +1,4 @@
-const elements = Object.fromEntries(['word-card','word-category','word-count','word','pronunciation','meaning','example','empty-state','progress-label','progress-fill','progress-note','mastered-total','search','sound','skip','know'].map(id => [id, document.getElementById(id)]));
+const elements = Object.fromEntries(['word-card','word-category','word-count','word','pronunciation','meaning','example','empty-state','progress-label','progress-fill','progress-note','mastered-total','search','sound','skip','know'].map(id => [id, document.getElementById(id)]);
 const dailyTarget = 100;
 let words = [];
 let exam = 'all';
@@ -12,11 +12,14 @@ if (localStorage.getItem('vocab-studied-date') !== today) {
   localStorage.setItem('vocab-studied-today', '0');
 }
 
+function sourcesOf(item) { return item.sources || (item.source ? [item.source] : []); }
 function visibleWords() {
   const query = elements.search.value.trim().toLowerCase();
-  return words.filter(item => (exam === 'all' || item.exam === exam) && (!query || `${item.word} ${item.meaning} ${item.example}`.toLowerCase().includes(query)));
+  return words.filter(item => {
+    const inSet = exam === 'all' || item.exam === exam || sourcesOf(item).includes(exam);
+    return inSet && (!query || `${item.word} ${item.meaning} ${item.example} ${sourcesOf(item).join(' ')}`.toLowerCase().includes(query));
+  });
 }
-
 function render() {
   const list = visibleWords();
   elements['mastered-total'].textContent = `已掌握 ${mastered.size} 个词`;
@@ -33,14 +36,14 @@ function render() {
   elements['empty-state'].hidden = true;
   currentIndex = ((currentIndex % list.length) + list.length) % list.length;
   const item = list[currentIndex];
-  elements['word-category'].textContent = item.exam;
+  elements['word-category'].textContent = sourcesOf(item).join(' · ') || item.exam;
   elements['word-count'].textContent = `${String(currentIndex + 1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
   elements.word.textContent = item.word;
-  elements.pronunciation.innerHTML = `${item.pronunciation} <span>${item.pos}</span>`;
-  elements.meaning.textContent = item.meaning;
-  elements.example.textContent = item.example;
+  elements.pronunciation.innerHTML = `${item.pronunciation || ''} <span>${item.pos || ''}</span>`;
+  elements.meaning.textContent = item.meaning || '此词表仅提供词目和词性，释义待补充。';
+  elements.example.textContent = item.example || '';
+  elements.example.parentElement.hidden = !item.example;
 }
-
 function advance(countAsStudied) {
   const list = visibleWords();
   if (!list.length) return;
@@ -51,7 +54,6 @@ function advance(countAsStudied) {
   currentIndex = (currentIndex + 1) % list.length;
   render();
 }
-
 document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
   exam = button.dataset.exam;
   currentIndex = 0;
@@ -83,7 +85,6 @@ document.addEventListener('keydown', event => {
     advance(false);
   }
 });
-
 fetch('./vocabulary.json').then(response => {
   if (!response.ok) throw new Error('词库读取失败');
   return response.json();
