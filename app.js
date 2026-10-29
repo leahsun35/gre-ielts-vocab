@@ -85,7 +85,7 @@ document.addEventListener('keydown', event => {
     advance(false);
   }
 });
-fetch('./vocabulary.json').then(response => {
+fetch('./vocabulary.json?v=20261029-2').then(response => {
   if (!response.ok) throw new Error('词库读取失败');
   return response.json();
 }).then(data => { words = data; render(); }).catch(() => {
