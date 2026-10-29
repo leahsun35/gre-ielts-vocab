@@ -1,25 +1,34 @@
 # 词汇岛 · GRE & IELTS
 
-一个纯静态的中英双语背词网页。无需安装、服务器、账号或 API；词库保存在 `vocabulary.json`，学习记录保存在当前浏览器。
+纯静态的中英词汇学习网页。每天目标为 100 个词；学习记录保存在当前浏览器。
+
+## 词库来源与许可
+
+词条统一保存在 `vocabulary.json`。合并时按单词去重，并保留 `sources` 来源标记。
+
+- **NGSL 1.01**：2,801 个词条；英语释义。来源项目许可为 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。官方项目页：[New General Service List](https://www.newgeneralservicelist.com/new-general-service-list)。
+- **NAWL 1.0**：963 个词条；英语释义。来源项目许可为 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)。官方项目页：[New Academic Word List](https://www.newgeneralservicelist.com/new-academic-word-list)。
+- **AKL**：930 个公开词目，按词性分类；官方页面提供词目，但未提供释义。词条许可为 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)，引用 Paquot, M. (2010), *Academic Vocabulary in Learner Writing*, pp. 56–58. [UCLouvain 项目页](https://uclouvain.be/en/research-institutes/ilc/cecl/the-academic-keyword-list-akl)。
+- **GRE / IELTS 示例词**：原有 20 个手工示例词。
+
+NGSL 和 NAWL 当前导入的是 1.01 / 1.0 文件版本；项目官方网站目前也提供 1.2 版本。词表来源本身可再利用，但筛选考试词时应注意：NGSL/NAWL/AKL 是通用或学术英语词表，不是官方 GRE/IELTS 必考词清单。AKL 官方列表存在重复词项，因此应用按词去重，筛选计数按唯一词条计算。
+
+AVL 没有转载进仓库：其官方使用页面明确要求不要把列表放到其他网站。
 
 ## 本地预览
 
-浏览器会限制直接读取本地 JSON 文件，请在此文件夹打开终端运行：
+在此文件夹打开终端运行：
 
 ```bash
 python -m http.server 8000
 ```
 
-然后访问 `http://localhost:8000`。部署到 GitHub Pages 后不需要这一步。
+访问 `http://localhost:8000`。
 
-## 发布到 GitHub Pages
+## GitHub Pages
 
-1. 在 GitHub 右上角点 **+ → New repository**，仓库名填 `gre-ielts-vocab`。
-2. 选 **Public**（免费 Pages 最方便），创建时不要勾选 README、license 或 `.gitignore`，保持空仓库。
-3. 在仓库页点 **Add file → Upload files**，上传本文件夹中的所有文件，再点 **Commit changes**。
-4. 打开 **Settings → Pages**，在 **Build and deployment** 里选 **Deploy from a branch**；分支选 `main`，目录选 `/(root)`，保存。
-5. 等待发布完成。Pages 设置页会显示网址，通常是 `https://你的用户名.github.io/gre-ielts-vocab/`。
+仓库设置中选择 **Settings → Pages → Deploy from a branch → main → /(root)**。之后访问：
 
-## 添加词条
+`https://leahsun35.github.io/gre-ielts-vocab/`
 
-编辑 `vocabulary.json`，每条需有 `word`、`exam`（`GRE` 或 `IELTS`）、`pos`、`pronunciation`、`meaning` 和 `example` 字段。上传更新后，Pages 会自动重新发布。当前内置 20 个示例词条，便于体验第一版功能。
+每次推送到 main 后，GitHub Pages 会自动更新。
